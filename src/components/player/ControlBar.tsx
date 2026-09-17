@@ -113,6 +113,7 @@ export function ControlBar({
         </span>
         <Slider
           ariaLabel="Seek"
+          ariaValueText={`${formatTime(displayTime)} of ${formatTime(state.duration || 0)}`}
           className="flex-1"
           min={0}
           max={state.duration || item?.duration || 1}
@@ -193,7 +194,7 @@ export function ControlBar({
           />
           <Slider
             ariaLabel="Volume"
-            aria-valuetext={`${Math.round(state.volume * 100)} percent`}
+            ariaValueText={`${Math.round(state.volume * 100)} percent`}
             className="w-0 overflow-hidden opacity-0 transition-all duration-300 group-hover/vol:w-20 group-hover/vol:opacity-100 group-focus-within/vol:w-20 group-focus-within/vol:opacity-100 sm:w-20 sm:opacity-100"
             min={0}
             max={1}

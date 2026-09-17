@@ -8,6 +8,8 @@ interface Props {
   onChange: (value: number) => void;
   className?: string;
   ariaLabel: string;
+  /** Screen-reader friendly value, e.g. "82 percent". */
+  ariaValueText?: string;
   /** Rendered to the right of the track. */
   trailing?: number;
   onScrubStart?: () => void;
@@ -26,6 +28,7 @@ export function Slider({
   onChange,
   className,
   ariaLabel,
+  ariaValueText,
   trailing,
   onScrubStart,
   onScrubEnd,
@@ -52,6 +55,7 @@ export function Slider({
       <input
         type="range"
         aria-label={ariaLabel}
+        aria-valuetext={ariaValueText}
         className="relative h-5 w-full cursor-pointer appearance-none bg-transparent"
         min={min}
         max={max}
